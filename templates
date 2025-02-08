@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wuillis Rangel - Portafolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/acerca_de">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025  Wuillis Alberto Rangel Peña</p>
+    </footer>
+</body>
+</html>
+% extends "base.html" %}
+
+{% block content %}
+    <h1>Contacto</h1>
+    <p>Puedes contactarme a través de los siguientes medios:</p>
+    <ul>
+        <li><strong>Email:</strong> rangelwuillis421@gmail.com</li>
+        <li><strong>Teléfono:</strong> +51 987 654 321</li>
+    </ul>
+    <form id="contactoForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="mensajeEnviado"></p>
+{% endblock %}
+% extends "base.html" %}
+
+{% block content %}
+    <h1>Bienvenido a Mi Portafolio</h1>
+    <img src="{{ url_for('static', filename='perfil.jpg') }}" alt="Foto de perfil" class="perfil">
+    <p>Hola, soy <strong>Wuillis Alberto Rangel Peña</strong>, estudiante del quinto ciclo de Desarrollo de Sistemas en el Instituto Continental.</p>
+    <p>Mi CE es <strong>003715337</strong>, y mi correo electrónico es <strong>rangelwuillis421@gmail.com</strong>.</p>
+    <p>Actualmente, estoy enfocado en aprender tecnologías modernas como Flask, Docker y despliegue en la nube.</p>
+{% endblock %}
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Acerca de Mí</h1>
+    <p>Hola, soy <strong>Wuillis Alberto Rangel Peña</strong>, estudiante del quinto ciclo de Desarrollo de Sistemas en el Instituto Continental.</p>
+    <p>Mi CE es <strong>003715337</strong>, y mi correo electrónico es <strong>rangelwuillis421@gmail.com</strong>.</p>
+    <h2>Mi Carrera</h2>
+    <p>Actualmente, estoy cursando el quinto ciclo de la carrera de Desarrollo de Sistemas. Durante mi formación, he adquirido conocimientos en:</p>
+    <ul>
+        <li>Programación en Python, Java y JavaScript.</li>
+        <li>Desarrollo web con Flask y Django.</li>
+        <li>Bases de datos SQL y NoSQL.</li>
+        <li>Despliegue de aplicaciones en la nube.</li>
+        <li>Uso de Docker para contenerización.</li>
+    </ul>
+    <h2>Mis Objetivos</h2>
+    <p>Mi objetivo es convertirme en un desarrollador full-stack, capaz de crear aplicaciones web y móviles de alto rendimiento. Además, quiero especializarme en DevOps para mejorar la eficiencia en el ciclo de vida del desarrollo de software.</p>
+{% endblock %}
+
